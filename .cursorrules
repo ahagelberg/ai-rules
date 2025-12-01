@@ -1,0 +1,90 @@
+# Cursor Rules for development
+
+## NO MAGIC NUMBERS
+- NEVER use magic numbers in code (like 150, 2, 20, etc.)
+- ALWAYS use named constants at the top of the code for easy changing
+- Define constants with descriptive names and comments
+- Make values easily configurable and maintainable
+
+## CODE REUSE AND NO DUPLICATION
+- ALWAYS reuse existing code when possible
+- NEVER duplicate code - extract common functionality into helper methods
+- If similar logic appears in multiple places, create a shared function
+- Prefer composition and helper methods over copy-paste programming
+- DRY principle: Don't Repeat Yourself
+
+## DON'T OVER ENGINEER
+- Don't use unnecessary complex solutions for simple tasks
+- But don't take shortcuts that produce poor quality code
+- Use standard solutions and syntax for the language you're working in
+
+## NO ASSUMPTIONS
+- NEVER make assumptions about requirements or implementation details
+- ALWAYS ask for clarification if something is unclear
+- When in doubt, ask the user to specify what they want
+- Don't add "reasonable" or "helpful" features without being asked
+- Keep solutions simple and direct
+
+## RESPECT CLASS AND API BOUNDARIES
+- ALWAYS respect class and API boundaries
+- NEVER access variables and methods meant to be private/internal externally
+- NEVER call internal methods (starting with _) from outside the class
+- NEVER access private attributes directly from external classes
+- Use only public methods and properties for inter-class communication
+- If you need internal functionality, add a proper public method instead
+- This prevents deadlocks, race conditions, and breaks encapsulation
+
+## FIX ROOT CAUSES, NOT SYMPTOMS
+- DO NOT add checks to check for or fix problems that are caused by incorrect code earlier in the system
+- DO NOT add late checks and transforms to handle incorrect data
+- ALWAYS fix the root cause of the problem - find where incorrect data is being created/added and fix that
+- If code receives wrong data types, fix the code that produces/sends that data, not the receiving code
+- Example: If blocks contain wrong data types, fix the code that adds data to blocks, don't add type checks in the block processing code
+
+## NEVER USE DELAYS FOR RACE CONDITIONS
+- ABSOLUTELY NEVER use time.sleep(), delays, or timeouts to "solve" race conditions or timing issues
+- Use proper synchronization primitives: threading.Event, threading.Condition, threading.Semaphore, or locks
+- If something needs to wait for a condition, use Event.wait() or Condition.wait(), NOT time.sleep()
+- Delays are unreliable, wasteful, and indicate poor design
+- This is an ABSOLUTE rule: NEVER use delays to fix race conditions, not now, not ever
+
+## WRITE GOOD LOOKING CODE
+- Follow the coding style already used in the rest of the code
+- Add useful comments, but not inane pointless ones
+- DO NOT add comments about changes, just about the current working of the code.
+- Don't add comments for obvious things
+- Limit nesting. Use inverse logic if it means fewer neting levels
+- Avoid import/include in the middle of the code - keep them at the top of the files
+- Follow the existing code standard when editing files.
+- NEVER add unnecessary empty lines that artificially inflate code
+- Keep empty lines ONLY between functions and classes for readability
+- DO NOT add empty lines before comments
+- Keep code compact and efficient - every line should serve a purpose
+- Avoid padding code with empty lines for "breathing room" - use them sparingly and only when they improve actual readability
+
+## ERROR HANDLING
+- Don't add entire functions in try blocks out of convenience
+- Put only the codes that may cause runtime exceptions that can be accepted in try blocks
+- Use multiple try blocks in a funciton to differentiate between errors
+- Use try blocks for code that can fail in runtime
+- Avoid try blocks for code that only fails if there's a critical bug in the code.
+
+## TESTS
+- Only write mock code when *absolutely* necessary. Avoid as much as possible.
+- Never change the code to comply with tests unless the code is actually wrong.
+
+## NO ASSUMPTIONS
+- NEVER make assumptions about requirements or implementation details
+- ALWAYS ask for clarification if something is unclear
+- When in doubt, ask the user to specify what they want
+- Don't add "reasonable" or "helpful" features without being asked
+- Keep solutions simple and direct
+
+## DON'T BE OVERLY COMPLIANT
+- Don't say I'm right unless you've verified that I am.
+- If you think I'm wrong then say so instead of trying to implement things incorrectly.
+
+## NO CSS IN JAVASCRIPT CODE
+- All CSS styling should be put in separate CSS-files
+- Do not set styles on elements using JavaScript
+- Apply CSS classes to change appearance programatically
