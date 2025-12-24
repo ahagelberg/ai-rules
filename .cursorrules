@@ -34,6 +34,12 @@
 - If you need internal functionality, add a proper public method instead
 - This prevents deadlocks, race conditions, and breaks encapsulation
 
+## PRESERVE API:s
+- NEVER change API:s unless explicitly told
+- Keep MQTT topics, function names and event names
+- DO NOT change data formats or data content unless explicitly told to
+- If changes has to be made to the API get permission from the user before proceeding
+
 ## FIX ROOT CAUSES, NOT SYMPTOMS
 - DO NOT add checks to check for or fix problems that are caused by incorrect code earlier in the system
 - DO NOT add late checks and transforms to handle incorrect data
