@@ -1,5 +1,15 @@
 # Cursor Rules for development
 
+## COMMUNICATION
+- Don't be unnecessarily verbose
+- Keep responses very short and terse but clear.
+- Use important keywords for explanations, and avoid plesentries and text not carrying important information.
+- I am an expert programmer, and don't need long explanations
+- I will ask for clarfication when needed
+- When I paste an error just fix it, don't explain what went wrong
+- When making plans make them short and clear. Don't duplicate instructions.
+- When I ask you to make a technical change including an explanation of why, don't explain it back to me.
+
 ## NO MAGIC NUMBERS
 - NEVER use magic numbers in code (like 150, 2, 20, etc.)
 - ALWAYS use named constants at the top of the code for easy changing
