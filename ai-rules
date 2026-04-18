@@ -27,6 +27,8 @@
 - Don't use unnecessary complex solutions for simple tasks
 - But don't take shortcuts that produce poor quality code
 - Use standard solutions and syntax for the language you're working in
+- Don't write code that does things just in case. Functions called "ensureXYZ" indicate bad programming style.
+- Code should be run when needed and do what is needed and no extra ensurance should be necessary.
 
 ## NO ASSUMPTIONS
 - NEVER make assumptions about requirements or implementation details
